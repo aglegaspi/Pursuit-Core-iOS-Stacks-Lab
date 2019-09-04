@@ -21,7 +21,13 @@ func largest(stack: Stack<Int>) -> Int {
 //Find the sum of a Stack of Ints
 
 func sum(stack: Stack<Int>) -> Int {
-    return 0
+    var sum = 0
+    
+    while !stack.isEmpty() {
+        let currentVal = stack.pop()
+        sum += currentVal!
+    }
+    return sum
 }
 
 //Problem Three:
