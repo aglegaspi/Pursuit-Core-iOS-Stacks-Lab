@@ -4,6 +4,7 @@ import Foundation
 //Find the largest integer in a Stack of Ints
 
 func largest(stack: Stack<Int>) -> Int {
+    var stack = stack
     var output = 0
     
     while !stack.isEmpty() {
@@ -21,6 +22,7 @@ func largest(stack: Stack<Int>) -> Int {
 //Find the sum of a Stack of Ints
 
 func sum(stack: Stack<Int>) -> Int {
+    var stack = stack
     var sum = 0
     
     while !stack.isEmpty() {
@@ -50,13 +52,12 @@ func sum(stack: Stack<Int>) -> Int {
  */
 
 func reverse<T>(stack: Stack<T>) -> Stack<T> {
+    var stack = stack
     var output = Stack<T>()
     
     while !stack.isEmpty() {
         let currentVal = stack.pop()
-        
         output.push(element: currentVal!)
-        
     }
     return output
 }
@@ -66,9 +67,24 @@ func reverse<T>(stack: Stack<T>) -> Stack<T> {
 //Determine if two stacks are equal
 
 func equalStacks<T: Equatable>(stackOne: Stack<T>, stackTwo: Stack<T>) -> Bool {
+    var stackOne = stackOne
+    var stackTwo = stackTwo
     
+    while !stackOne.isEmpty() && !stackTwo.isEmpty() {
+        
+        if stackOne.pop() != stackTwo.pop() {
+            return false
+        }
+        
+    }
     
-    return stackOne === stackTwo
+    return stackOne.isEmpty() && stackTwo.isEmpty()
+    
+    // check pop off both stack one and two and check if they different
+    // if they're the same and keep popping of the pair
+    // if both stacks are empy then return true
+    // to things that are different sizes aren't equal
+
 }
 
 
@@ -76,6 +92,7 @@ func equalStacks<T: Equatable>(stackOne: Stack<T>, stackTwo: Stack<T>) -> Bool {
 //Write a function that pushes a new element to the bottom of a Stack
 
 func pushBottom<T>(stack: Stack<T>, newElement: T) -> Stack<T> {
+    
     return Stack<T>()
 }
 
