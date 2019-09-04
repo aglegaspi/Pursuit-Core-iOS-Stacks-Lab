@@ -4,7 +4,17 @@ import Foundation
 //Find the largest integer in a Stack of Ints
 
 func largest(stack: Stack<Int>) -> Int {
-    return 0
+    var output = 0
+    
+    while !stack.isEmpty() {
+        let currentVal = stack.pop()
+        
+        if output < currentVal! {
+            output = currentVal!
+        }
+
+    }
+    return output
 }
 
 //Problem Two:
