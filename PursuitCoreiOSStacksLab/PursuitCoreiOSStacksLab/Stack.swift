@@ -23,4 +23,3 @@ class Stack<T> {
         return arr.count == 0
     }
 }
-

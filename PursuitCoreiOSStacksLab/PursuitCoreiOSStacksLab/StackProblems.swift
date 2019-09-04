@@ -50,7 +50,15 @@ func sum(stack: Stack<Int>) -> Int {
  */
 
 func reverse<T>(stack: Stack<T>) -> Stack<T> {
-    return Stack<T>()
+    var output = Stack<T>()
+    
+    while !stack.isEmpty() {
+        let currentVal = stack.pop()
+        
+        output.push(element: currentVal!)
+        
+    }
+    return output
 }
 
 
